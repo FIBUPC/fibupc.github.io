@@ -43,7 +43,7 @@
         localStorage.removeItem(stateKey);
         if (access_token) {
             $.ajax({
-                url: 'http://localhost:8000/v2/jo/',
+                url: 'https://api.fib.upc.edu/v2/jo/',
                 headers: {
                     'Accept': 'application/json',
                     'Authorization': 'Bearer ' + access_token
@@ -64,7 +64,7 @@
             var client_id = 'qkjc7gxze3oEWTfhw8JCkLikyo7p1pZZz9JjsA4w'; // Your client id
             var state = generateRandomString(16);
             localStorage.setItem(stateKey, state);
-            var url = 'http://localhost:8000/v2/o/authorize/';
+            var url = 'https://api.fib.upc.edu/v2/o/authorize/';
             url += '?client_id=' + encodeURIComponent(client_id);
             url += '&response_type=token';
             url += '&state=' + encodeURIComponent(state);
