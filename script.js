@@ -61,7 +61,7 @@
             $('#loggedin').hide();
         }
         document.getElementById('login-button').addEventListener('click', function () {
-            var client_id = 'qkjc7gxze3oEWTfhw8JCkLikyo7p1pZZz9JjsA4w'; // Your client id
+            var client_id = 'NI3oqMbpn4Mzr0Snqa2l87rFqqw8WXGe1rIpA6Sw'; // Your client id
             var state = generateRandomString(16);
             localStorage.setItem(stateKey, state);
             var url = 'https://api.fib.upc.edu/v2/o/authorize/';
