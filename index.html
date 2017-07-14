@@ -10,11 +10,16 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
+    <!-- Latest compiled and minified jQuery -->
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
+
 </head>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -24,18 +29,28 @@
     </div>
 </nav>
 <div class="container">
-    <div class="content" style="margin-top: 70px">
+    <div class="content" style="padding: 100px">
         <div class="row">
             <div class="col-md-12">
-                <div class="jumbotron">
-                    <h1>Welcome to OAuth Demo with Javascript</h1>
-                    <p>An example of using the Implicit Grant with an application in Javascript.</p>
-                    <p>To learn more about OAuth, visit <a
-                            href="https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2">An
-                        Introduction to OAuth2</a>.</p>
-                    <p><a class="btn btn-primary btn-lg"
-                          href="http://localhost:8000/v2/o/authorize/?client_id=qkjc7gxze3oEWTfhw8JCkLikyo7p1pZZz9JjsA4w&response_type=token&state=random_state_string"
-                          role="button">Log in to get your info</a></p>
+                <div id="jumbotron">
+                    <div class="jumbotron">
+                        <div id="login">
+                            <h1>Welcome to OAuth Demo with Javascript</h1>
+                            <p>An example of using the Implicit Grant with an application in Javascript.</p>
+                            <p>To learn more about OAuth, visit <a
+                                    href="https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2">An
+                                Introduction to OAuth2</a>.</p>
+                            <button id="login-button" class="btn btn-primary btn-lg" role="button">Log in to get your
+                                info
+                            </button>
+                        </div>
+                        <div id="loggedin">
+                            <div id="user-profile">
+                                <p id="nom"></p>
+                                <p id="cognoms"></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -43,9 +58,9 @@
 </div>
 
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
