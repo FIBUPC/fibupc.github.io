@@ -1,6 +1,3 @@
-/**
- * Created by florencia.rimolo on 13/07/2017.
- */
 (function () {
     var stateKey = 'random_state_key';
 
@@ -49,18 +46,32 @@
                     'Authorization': 'Bearer ' + access_token
                 },
                 success: function (response) {
-                    console.log(response);
                     $('#nom').text(response.nom);
                     $('#cognoms').text(response.cognoms);
                     $('#login').hide();
                     $('#loggedin').show();
                 }
             });
+
+            var request = new XMLHttpRequest();
+            request.open('GET', 'https://api.fib.upc.edu/v2/jo/foto.jpg', true);
+            request.setRequestHeader('Authorization', 'Bearer ' + access_token);
+            request.responseType = 'arraybuffer';
+            request.onload = function (e) {
+                var data = new Uint8Array(this.response);
+                var raw = String.fromCharCode.apply(null, data);
+                var base64 = btoa(raw);
+                var src = "data:image;base64," + base64;
+
+                $("#foto").attr('src', src);
+            };
+
+            request.send();
         } else {
             $('#login').show();
             $('#loggedin').hide();
         }
-        document.getElementById('login-button').addEventListener('click', function () {
+        $('#login-button').bind('click', function () {
             var client_id = 'NI3oqMbpn4Mzr0Snqa2l87rFqqw8WXGe1rIpA6Sw'; // Your client id
             var state = generateRandomString(16);
             localStorage.setItem(stateKey, state);
@@ -69,6 +80,6 @@
             url += '&response_type=token';
             url += '&state=' + encodeURIComponent(state);
             window.location = url;
-        }, false);
+        });
     }
 })();
