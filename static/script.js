@@ -72,8 +72,8 @@
             $('#loggedin').hide();
         }
         $('#login-button').bind('click', function () {
-            var client_id = 'YOUR_CLIENT_ID';
-            var redirect_uri = 'YOUR_REDIRECT_URI';
+            var client_id = 'NI3oqMbpn4Mzr0Snqa2l87rFqqw8WXGe1rIpA6Sw';
+            var redirect_uri = 'https://fibupc.github.io/';
             var state = generateRandomString(16);
             localStorage.setItem(stateKey, state);
             var url = 'https://api.fib.upc.edu/v2/o/authorize/';
